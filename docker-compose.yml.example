@@ -12,12 +12,10 @@ services:
     image: heapops/wireguard:latest
     volumes:
       - ./wgp2p.conf:/etc/wireguard/wg0.conf
-    environment:
-      - CS=S
     restart: unless-stopped
     network_mode: "bridge"
     ports:
-      - "8859:8859/udp"
+      - "1234:1234/udp"
     cap_add:
       - NET_ADMIN
       - SYS_MODULE
